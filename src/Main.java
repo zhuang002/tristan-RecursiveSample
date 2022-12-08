@@ -6,9 +6,30 @@ public class Main {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		binarySeachSample();
+		//binarySeachSample();
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		System.out.println(feb(n));
 	}
 	
+	private static int feb(int n) {
+		// TODO Auto-generated method stub
+		// f(n) = f(n-1)+f(n-2); f(0) = 0, f(1) = 1;
+		/*int prev1 = 0;
+		int prev2 = 1;*/
+		if (n==0) return 0;
+		if (n==1) return 1;
+		/*for (int i=2; i<=40;i++) {
+			int current = prev1+prev2;
+			prev1 = prev2;
+			prev2 = current;
+		}
+		return prev2;*/
+		return feb(n-1)+feb(n-2);
+		
+	}
+
 	private static void binarySeachSample() {
 		// TODO Auto-generated method stub
 		String[] names;
@@ -93,5 +114,7 @@ public class Main {
 		}
 		return -1;
 	}
+	
+	
 
 }
